@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="ProyectoFinalPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>modelo.Personas</class>
+    <class>modelo.AccesosDelRol</class>
+    <class>modelo.Docentes</class>
+    <class>modelo.TipoPersona</class>
+    <class>modelo.Silabo</class>
+    <class>modelo.Usuarios</class>
+    <class>modelo.AlumnosCarrera</class>
+    <class>modelo.RolesUsuarios</class>
+    <class>modelo.DocentesMateria</class>
+    <class>modelo.Carreras</class>
+    <class>modelo.ReferenciaSilabo</class>
+    <class>modelo.HistorialUsuarios</class>
+    <class>modelo.Materias</class>
+    <class>modelo.Referencias</class>
+    <class>modelo.JornadaDocente</class>
+    <class>modelo.Alumnos</class>
+    <class>modelo.Jornadas</class>
+    <class>modelo.PeriodoIngresoNotas</class>
+    <class>modelo.Cursos</class>
+    <class>modelo.PeriodoLectivo</class>
+    <class>modelo.AlumnoCurso</class>
+    <class>modelo.SectorEconomico</class>
+    <class>modelo.DetalleJornada</class>
+    <class>modelo.MallaEstudiante</class>
+    <class>modelo.EjesFormacion</class>
+    <class>modelo.SesionClase</class>
+    <class>modelo.Requisitos</class>
+    <class>modelo.TipoDeNota</class>
+    <class>modelo.UnidadSilabo</class>
+    <class>modelo.Lugares</class>
+    <class>modelo.TipoActividad</class>
+    <class>modelo.Accesos</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/proyecto"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="qwerty79"/>
+    </properties>
+  </persistence-unit>
+</persistence>
