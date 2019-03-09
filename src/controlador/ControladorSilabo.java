@@ -9,15 +9,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 import modelo.UnidadSilabo;
 import modelo.db.dbCarreras;
+import modelo.db.dbEvaluacionSilabo;
 
 import modelo.db.dbMaterias;
 import modelo.db.dbSilabo;
@@ -34,9 +38,12 @@ public class ControladorSilabo {
     private modelo.db.dbSilabo silabo;
 
     private modelo.db.dbUsuarios usuario;
+    
+    private modelo.db.dbEvaluacionSilabo dbevalSilabo;
 
     private vista.frmConfiguracionSilabo setup;
-
+    
+    
     private vista.frmGestionSilabo gestion;
 
     private List<UnidadSilabo> unidades;
@@ -49,10 +56,11 @@ public class ControladorSilabo {
         return gestion;
     }
 
-    public ControladorSilabo(dbSilabo silabo, dbUsuarios usuario, frmConfiguracionSilabo setup) {
+    public ControladorSilabo(dbSilabo silabo, dbUsuarios usuario, frmConfiguracionSilabo setup,dbEvaluacionSilabo dbevaSilabo) {
         this.silabo = silabo;
         this.usuario = usuario;
         this.setup = setup;
+        this.dbevalSilabo=dbevaSilabo;
         this.gestion = new frmGestionSilabo();
         setup.setVisible(true);
         iniciarControlador();
@@ -60,7 +68,12 @@ public class ControladorSilabo {
     }
 
     public void iniciarControlador() {
-
+      gestion.getBtnAgregarAD().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                agregar_en_Tabla(e);
+            }
+});
         cargarCombo1();
 
         ActionListener a1 = new ActionListener() {
@@ -214,6 +227,36 @@ public class ControladorSilabo {
         gestion.getCmbUnidad().addItem("Unidad " + unidades.size());
 
         
+    }
+    public void cargarDatosTabla(){
+        DefaultTableModel modelo_tabla;
+        modelo_tabla = (DefaultTableModel) gestion.getTblAsistidaDocente().getModel();
+        List<modelo.EvaluacionSilabo> lista=dbevalSilabo.mostrarEvaluacionSilabos1();
+        
+        int columnas = modelo_tabla.getColumnCount();
+
+        for (int i = 0; i < lista.size(); i++) {
+            modelo_tabla.addRow(new Object[columnas]);
+            gestion.getTblAsistidaDocente().setValueAt(lista.get(i).getActividad(), i, 0);
+            gestion.getTblAsistidaDocente().setValueAt(lista.get(i).getInstrumento(), i, 1);
+            gestion.getTblAsistidaDocente().setValueAt(lista.get(i).getValoracion(), i, 2);
+            gestion.getTblAsistidaDocente().setValueAt(lista.get(i).getFechaEnvio(), i, 3);
+            gestion.getTblAsistidaDocente().setValueAt(lista.get(i).getFechaPresentacion(), i, 4);  
+        }
+    }
+    public void agregar_en_Tabla(MouseEvent e){
+        dbevalSilabo.setActividad(gestion.getTxtIndicadorAD().getText());
+        dbevalSilabo.setInstrumento(gestion.getTxtInstrumentoAD().getText());
+        dbevalSilabo.setValoracion(Integer.parseInt(gestion.getSpnValoracionAD().getValue().toString()));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        String date=(gestion.getDchFechaEnvioAD().getDateFormatString());
+        LocalDate localDate = LocalDate.parse(date, formatter);
+        dbevalSilabo.setFechaEnvio(localDate);
+        
+        String date1=gestion.getDchFechaPresentacionAD().getDateFormatString();
+        LocalDate localDate1 = LocalDate.parse(date1, formatter);
+        dbevalSilabo.setFechaPresentacion(localDate1);
+        cargarDatosTabla();
     }
 
 }

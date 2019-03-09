@@ -50,7 +50,7 @@ public class ControladorUsuarios {
             public void actionPerformed(ActionEvent ae) {
                
                 
-                ControladorSilabo cs = new ControladorSilabo(new modelo.db.dbSilabo(), usuario, new frmConfiguracionSilabo());
+                ControladorSilabo cs = new ControladorSilabo(new modelo.db.dbSilabo(), usuario, new frmConfiguracionSilabo(),new modelo.db.dbEvaluacionSilabo());
                 
                 principal.getDkpSilabo().add(cs.getSetup());
 
