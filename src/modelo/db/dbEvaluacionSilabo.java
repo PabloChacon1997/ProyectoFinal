@@ -78,4 +78,16 @@ public class dbEvaluacionSilabo extends EvaluacionSilabo {
         }
 
     }
+    
+    public List<EvaluacionSilabo> mostrarEvaluacionSilabos1(){
+        List<EvaluacionSilabo> lista = new ArrayList<EvaluacionSilabo>();
+        EvaluacionSilabo es = new EvaluacionSilabo();
+        es.setActividad(getActividad());
+        es.setInstrumento(getInstrumento());
+        es.setValoracion(getValoracion());
+        es.setFechaEnvio(getFechaEnvio());
+        es.setFechaPresentacion(getFechaPresentacion());
+        lista.add(es);
+        return lista;
+    }
 }
