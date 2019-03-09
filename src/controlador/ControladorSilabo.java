@@ -258,5 +258,7 @@ public class ControladorSilabo {
         dbevalSilabo.setFechaPresentacion(localDate1);
         cargarDatosTabla();
     }
-
+ public void ejemplo(){
+     System.out.println("hola");
+ }
 }
