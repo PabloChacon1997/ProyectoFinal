@@ -108,14 +108,14 @@
         <Component class="com.toedter.calendar.JDateChooser" name="dchFechaInicio">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="920" y="30" width="-1" height="-1"/>
+              <AbsoluteConstraints x="920" y="30" width="120" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="dchFechaFin">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="920" y="60" width="-1" height="-1"/>
+              <AbsoluteConstraints x="920" y="60" width="120" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

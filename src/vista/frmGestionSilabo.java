@@ -831,8 +831,8 @@ public class frmGestionSilabo extends javax.swing.JInternalFrame {
 
         lblFechaInicio.setText("Fecha de Inicio de Unidad:");
         pnlUnidad.add(lblFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, -1, -1));
-        pnlUnidad.add(dchFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
-        pnlUnidad.add(dchFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 60, -1, -1));
+        pnlUnidad.add(dchFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, 120, -1));
+        pnlUnidad.add(dchFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 60, 120, -1));
 
         lblFechaFin.setText("Fecha de Fin de Unidad:");
         pnlUnidad.add(lblFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, -1, -1));

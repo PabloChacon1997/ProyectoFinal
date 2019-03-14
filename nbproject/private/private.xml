@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Andres%20Bermeo/Desktop/ProgramacionVisual_netbeans/ProyectoFinal/src/controlador/ControladorSilabo.java</file>
-            <file>file:/C:/Users/Andres%20Bermeo/Desktop/ProgramacionVisual_netbeans/ProyectoFinal/src/vista/frmGestionSilabo.java</file>
-            <file>file:/C:/Users/Andres%20Bermeo/Desktop/ProgramacionVisual_netbeans/ProyectoFinal/src/modelo/db/dbEvaluacionSilabo.java</file>
-            <file>file:/C:/Users/Andres%20Bermeo/Desktop/ProgramacionVisual_netbeans/ProyectoFinal/src/modelo/db/dbCarreras.java</file>
+            <file>file:/C:/Users/BYRON/Documents/NetBeansProjects/ProyectoFinal/src/vista/frmGestionSilabo.java</file>
+            <file>file:/C:/Users/BYRON/Documents/NetBeansProjects/ProyectoFinal/src/mvc/Mvc.java</file>
+            <file>file:/C:/Users/BYRON/Documents/NetBeansProjects/ProyectoFinal/src/controlador/ControladorSilabo.java</file>
         </group>
     </open-files>
 </project-private>
